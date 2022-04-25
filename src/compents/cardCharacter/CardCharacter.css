@@ -1,0 +1,20 @@
+@import url('../../views/Home.css');
+
+.bg-tab{
+    background-color: var(--bg-tab-color) !important;
+    justify-content: center;
+}
+.c-text{
+    color: var(--font-color);
+}
+.card-character{
+    margin: 1.5rem;
+    background-color: #141c41cc !important;
+}
+.card-text{
+    margin-bottom: 1rem;
+}
+.container-fluid{
+    padding-left: 0 !important;
+    padding-right: 0 !important; 
+}

@@ -1,0 +1,76 @@
+:root{
+    --bg-tab-color: #161b22;
+    --bg-color: #1d2f49;
+    --font-color: rgb(182, 182, 182);
+
+    --main-first-color:#ff2a00;
+    --main-second-color:#ff26002d;
+    --main-third-color:#415A75;
+
+    --pyro-first : #e66954;
+    --pyro-second : #d3462d;
+    --pyro-third : #bd1c00;
+
+    --hydro-first: #2546da;
+    --hydro-second: #1014f194;
+    --hydro-third: #0004e4;
+
+    --anemo-first: #6cfda9;
+    --anemo-second: #44e989;
+    --anemo-third: #01c251;
+
+    --cryo-first: #69b4d6;
+    --cryo-second: #40abdd;
+    --cryo-third: #008bcc;
+
+    --geo-first: #dbbd85;
+    --geo-second: #dab268;
+    --geo-third: #eb9f11;
+
+    --electro-first: #9a42ff;
+    --electro-second: #7c32d1;
+    --electro-third: #6000ce;
+
+
+
+}
+
+.Pyro{
+    --main-first-color: var(--pyro-first);
+    --main-second-color: var(--pyro-second);
+    --main-third-color: var(--pyro-third);
+}
+
+.Hydro{
+    --main-first-color: var(--hydro-first);
+    --main-second-color: var(--hydro-second);
+    --main-third-color: var(--hydro-third);
+}
+
+.Anemo{
+    --main-first-color: var(--anemo-first);
+    --main-second-color: var(--anemo-second);
+    --main-third-color: var(--anemo-third);
+}
+
+.Cryo{
+    --main-first-color: var(--cryo-first);
+    --main-second-color: var(--cryo-second);
+    --main-third-color: var(--cryo-third);
+}
+
+.Geo{
+    --main-first-color: var(--geo-first);
+    --main-second-color: var(--geo-second);
+    --main-third-color: var(--geo-third);
+}
+
+.Electro{
+    --main-first-color: var(--electro-first);
+    --main-second-color: var(--electro-second);
+    --main-third-color: var(--electro-third);
+}
+
+body{
+    background-color: var(--bg-color);
+}

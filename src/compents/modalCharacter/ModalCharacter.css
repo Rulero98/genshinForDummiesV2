@@ -1,0 +1,122 @@
+@import url('../../views/Home.css');
+
+.modal-dialog {
+    max-width: 75vw !important;
+}
+
+.modal-content {
+    background-color: var(--main-first-color) !important;
+    max-height: 670px !important;
+}
+
+.modal-content .modal-body img {
+    object-fit: contain;
+}
+
+.modal-content .btn-accept {
+    background-color: var(--main-third-color) !important;
+    border-color: rgba(0, 0, 0, 0) !important;
+}
+
+.modal-content .btn-accept:hover {
+    border-color: none !important;
+}
+
+.container-info-character {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.img-modal {
+    margin: auto 0;
+    width: 25%;
+}
+
+.options-modal {
+    width: 75%;
+    display: flex;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.options-modal .nav {
+    display: block !important;
+}
+
+.options-modal .nav .nav-item .nav-link {
+    color: #fff;
+    width: 300px;
+}
+
+.options-modal .nav .nav-item .active {
+    background-color: var(--main-second-color) !important;
+    border-radius: 0 !important;
+
+}
+
+.options-modal .tab-content {
+    background-color: var(--main-second-color) !important;
+    padding-left: 1rem;
+    width: 100%;
+    max-height: 600px;
+    padding-top: 1rem;
+}
+
+.options-modal .Talents-Info {
+    max-height: 500px;
+    overflow: auto;
+}
+
+
+@media (max-width: 992px) {
+
+    .container-info-character {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .modal-content .modal-body img {
+        object-fit: contain;
+        width: 100%;
+    }
+
+    .modal-content {
+        background-color: var(--main-first-color) !important;
+        min-height: 1200px !important;
+        max-height: 2000px !important;
+    }
+
+    .options-modal {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .options-modal .nav {
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+
+    .options-modal .nav .nav-item .active {
+        background-color: var(--main-second-color) !important;
+        border-radius: 0 !important;
+        border-color: var(--main-second-color) !important;
+    }
+
+    .options-modal .nav .nav-item {
+        background-color: var(--main-first-color) !important;
+        border-radius: 0 !important;
+    }
+
+    .options-modal .nav .nav-item .nav-link {
+        color: #fff;
+        width: 100%;
+    }
+
+    .options-modal .tab-content {
+        max-height: 440px;
+        overflow: auto;
+    }
+}

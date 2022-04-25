@@ -1,0 +1,15 @@
+@import url('../../views/Home.css');
+
+.c-nav .nav-tabs .nav-link.active{
+    background-color: var(--bg-tab-color) !important;
+    border-color: var(--bg-tab-color) !important;
+    color: var(--font-color) !important;
+}
+.c-nav .nav-tabs .nav-link{
+    color: var(--font-color);
+}
+.c-nav .nav-tabs .nav-link:hover{
+    background-color: var(--bg-tab-color) !important;
+    border-color: var(--bg-tab-color) !important;
+    color: var(--font-color) !important;
+}

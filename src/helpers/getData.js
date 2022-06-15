@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from 'axios'
 export const getData = async (type) => {
 
-    if (type === "characters") {
-        const url = "https://api.genshin.dev/characters/all";
-        const response = await axios.get(url);
-        const data = response.data;
+    if (type === 'characters') {
+        const url = 'https://api.genshin.dev/characters/all'
+        const response = await axios.get(url)
+        const data = response.data
 
         const info = data.map(obj => {
 
@@ -23,12 +23,12 @@ export const getData = async (type) => {
                 constellations: obj.constellations
             }
         })
-        return info;
+        return info
 
     } else if (type === 'weapons') {
-        const url = "https://api.genshin.dev/weapons/all";
-        const response = await axios.get(url);
-        const data = response.data;
+        const url = 'https://api.genshin.dev/weapons/all'
+        const response = await axios.get(url)
+        const data = response.data
         const info = data.map(obj => {
             return {
                 name: obj.name,
@@ -41,16 +41,26 @@ export const getData = async (type) => {
                 location: obj.location
             }
         })
-        return info;
+        return info
     } else if (type === 'names') {
-        const url = "https://api.genshin.dev/characters";
-        const response = await axios.get(url);
-        const data = response.data;
+        const url = 'https://api.genshin.dev/characters'
+        const response = await axios.get(url)
+        const data = response.data
         const info = data.map((obj,i) => {
             return {
                 name: data[i],                
             }
         })
-        return info;
+        return info
+    }else if (type === 'weaponNames') {
+        const url = 'https://api.genshin.dev/weapons'
+        const response = await axios.get(url)
+        const data = response.data
+        const info = data.map((obj,i) => {
+            return {
+                name: data[i],                
+            }
+        })
+        return info
     }
 }

@@ -61,11 +61,12 @@
     width: 100%;
     max-height: 600px;
     padding-top: 1rem;
+    overflow: auto;
 }
 
 .options-modal .Talents-Info {
     max-height: 500px;
-    overflow: auto;
+    
 }
 
 

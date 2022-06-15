@@ -1,5 +1,11 @@
 @import url('../../views/Home.css');
 
+.c-nav .nav{
+    background-color: var(--bg-color);
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+}
 .c-nav .nav-tabs .nav-link.active{
     background-color: var(--bg-tab-color) !important;
     border-color: var(--bg-tab-color) !important;

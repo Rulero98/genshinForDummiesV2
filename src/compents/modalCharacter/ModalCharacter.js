@@ -1,11 +1,12 @@
-import { PropTypes } from 'prop-types';
+import { PropTypes } from 'prop-types'
+import React from 'react'
 import Modal from 'react-bootstrap/Modal'
-import { Button, Tab, Tabs } from 'react-bootstrap';
+import { Button, Tab, Tabs } from 'react-bootstrap'
 
-import './ModalCharacter.css';
+import './ModalCharacter.css'
 
 export const ModalCharacter = ({ character, name, show, onHide }) => {
-    
+
     return (
         <>
             <Modal show={show} onHide={onHide} className={`${character.vision}`}>
@@ -37,13 +38,13 @@ export const ModalCharacter = ({ character, name, show, onHide }) => {
                                 </Tab>
                                 <Tab eventKey="SkillTalents" title="SkillTalents">
                                     <div className='Talents-Info'>
-                                        {!character.skillTalents ? 'No skillTalents available' : character.skillTalents.map((obj, i) => {
+                                        {!character.skillTalents ? 'No skillTalents available' : character.skillTalents.map(obj => {
                                             return (
                                                 <div key={obj.name}>
                                                     <p><b><i>{obj.name} - {obj.unlock}</i></b></p>
                                                     <p>{obj.description}</p>
                                                 </div>
-                                            );
+                                            )
                                         })}
                                     </div>
                                 </Tab>
@@ -58,7 +59,7 @@ export const ModalCharacter = ({ character, name, show, onHide }) => {
                                                         { }
                                                     </p>
                                                 </div>
-                                            );
+                                            )
                                         })}
                                     </div>
                                 </Tab>
@@ -69,11 +70,8 @@ export const ModalCharacter = ({ character, name, show, onHide }) => {
                                                 <div key={obj.name}>
                                                     <p><b><i>{obj.name} - {obj.unlock}</i></b></p>
                                                     <p>{obj.description}</p>
-                                                    <p>
-                                                        { }
-                                                    </p>
                                                 </div>
-                                            );
+                                            )
                                         })}
                                     </div>
                                 </Tab>
@@ -95,7 +93,7 @@ export const ModalCharacter = ({ character, name, show, onHide }) => {
                 </Modal.Footer>
             </Modal>
         </>
-    );
+    )
 }
 
 ModalCharacter.propTypes = {

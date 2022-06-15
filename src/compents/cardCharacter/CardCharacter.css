@@ -3,6 +3,7 @@
 .bg-tab{
     background-color: var(--bg-tab-color) !important;
     justify-content: center;
+    padding-top: 3rem;
 }
 .c-text{
     color: var(--font-color);

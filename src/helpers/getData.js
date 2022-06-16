@@ -62,5 +62,28 @@ export const getData = async (type) => {
             }
         })
         return info
+    }else if (type === 'artifacts') {
+        const url = 'https://api.genshin.dev/artifacts/all'
+        const response = await axios.get(url)
+        const data = response.data
+        const info = data.map(obj => {
+            return {
+                name: obj.name, 
+                max_rarity: obj.max_rarity,
+                '2-piece_bonus': obj['2-piece_bonus'],
+                '4-piece_bonus': obj['4-piece_bonus'],
+            }
+        })
+        return info
+    }else if (type === 'artifactsNames') {
+        const url = 'https://api.genshin.dev/artifacts'
+        const response = await axios.get(url)
+        const data = response.data
+        const info = data.map((obj,i) => {
+            return {
+                name: data[i],                
+            }
+        })
+        return info
     }
 }

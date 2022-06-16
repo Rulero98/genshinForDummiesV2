@@ -1,5 +1,9 @@
 @import url('../../views/Home.css');
 
+.c-nav{
+    display: flex;
+}
+
 .c-nav .nav{
     background-color: var(--bg-color);
     position: fixed;

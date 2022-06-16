@@ -1,0 +1,60 @@
+@import url('../../views/Home.css');
+
+
+.stats__container {
+    border: 2px solid var(--geo-first);
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 3.5rem;
+    width: 75%;
+}
+.stats__stats{
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 45%;
+}
+
+.dropdown__container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 75%;
+}
+
+.dropdown__container .dropdown__card {
+
+    height: 250px;
+    margin-top: 10px;
+    padding: 0 6px 0 6px;
+    width: 200px;
+}
+
+.dropdown__container .dropdown__card .btn {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
+
+.dropdown__container .show>.btn {
+    background-color: transparent !important;
+}
+
+.dropdown__container .dropdown__card .dropdown__image {
+    object-fit: cover;
+}
+
+.dropdown__container .dropdown__card p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.dropdown__container .dropdown__card .dropdown__menu {
+    background-color: #1f73e9;
+    color: #FFF;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    width: 100%;
+}

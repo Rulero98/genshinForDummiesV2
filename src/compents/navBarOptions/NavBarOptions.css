@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('../../views/Home.css');
 
 .c-nav .nav{
@@ -19,3 +20,26 @@
     border-color: var(--bg-tab-color) !important;
     color: var(--font-color) !important;
 }
+=======
+@import url('../../views/Home.css');
+
+.c-nav .nav{
+    background-color: var(--bg-color);
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+}
+.c-nav .nav-tabs .nav-link.active{
+    background-color: var(--bg-tab-color) !important;
+    border-color: var(--bg-tab-color) !important;
+    color: var(--font-color) !important;
+}
+.c-nav .nav-tabs .nav-link{
+    color: var(--font-color);
+}
+.c-nav .nav-tabs .nav-link:hover{
+    background-color: var(--bg-tab-color) !important;
+    border-color: var(--bg-tab-color) !important;
+    color: var(--font-color) !important;
+}
+>>>>>>> 6c6f7e9508abc60f73cca721e22d0b5a67590ab9

@@ -1,0 +1,24 @@
+
+.CB__container{
+    margin: 0 auto;
+    
+    margin-top: 10rem;
+    width: 100% !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}   
+
+.CB__container .CB__imgHolder{
+    width: 100%;
+
+}
+
+.CB__container .CB__imgHolder .CB__box{
+    background-size: cover;
+    height: 720px;
+    margin: 0 auto;
+    
+    width: 1080px;
+}

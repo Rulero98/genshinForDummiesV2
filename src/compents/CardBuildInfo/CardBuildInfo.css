@@ -1,0 +1,14 @@
+
+.IC__container{
+    
+    margin-top: 10rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.IC__container .IC__box{
+    width: 50%;
+    margin: 0 auto;
+}

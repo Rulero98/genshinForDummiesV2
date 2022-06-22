@@ -14,10 +14,11 @@ export const TableArtifacts = () => {
     useEffect(() => {
         if (names?.length !== 0) {
             artifacts?.forEach((e, i) => {
-                e.imgname = names[i]
+                //e.imgname = names[i]
+                e.imgname = 'https://api.genshin.dev/artifacts/' + names[i].name + '/circlet-of-logos.png'
             })
         }
-        console.log(artifacts)
+
     }, [names])
 
     useEffect(() => {
@@ -52,7 +53,7 @@ export const TableArtifacts = () => {
                             <Dropdown className="d-inline dropdown__card mx-2" autoClose={true} key={obj.name}>
                                 <Dropdown.Toggle id="dropdown-autoclose-false">
                                     <img
-                                        src={`https://api.genshin.dev/artifacts/${obj.imgname.name}/circlet-of-logos.png`}
+                                        src={obj.imgname}
                                         height={'150px'}
                                         width={'150px'}
                                         className='dropdown__image'

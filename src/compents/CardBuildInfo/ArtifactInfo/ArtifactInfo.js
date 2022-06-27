@@ -1,95 +1,162 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { useFetch } from '../../../hooks/useFetch'
+import { CardBuildImg } from '../CardBuildImg/CardBuildImg'
 
-export const ArtifactInfo = ({ AR, id }) => {
+import './style.css'
 
-    
+export const ArtifactInfo = () => {
 
-    const getSelectMainStat = (id) => {
-        if (!id) {
-            return 0
-        }
-        if (id === 'Sands') {
-            const idSelect = id + 'Main'
-            return <select className='w-50' id={idSelect} >
-                <option value={'Atk %'}>Atk %</option>
-                <option value={'Def %'}>Def %</option>
-                <option value={'Hp %'}>Hp %</option>
-                <option value={'Energy Recharge'}>Energy Recharge</option>
-                <option value={'Elemental Mastery'}>Elemental Mastery</option>
-            </select>
-        }
-        if (id === 'Goblet') {
-            const idSelect = id + 'Main'
-            return <select className='w-50' id={idSelect} >
-                <option value={'Atk %'}>Atk %</option>
-                <option value={'Def %'}>Def %</option>
-                <option value={'Hp %'}>Hp %</option>
-                <option value={'Elemental Mastery'}>Elemental Mastery</option>
-                <option value={'Geo Damage'}>Geo Damage</option>
-                <option value={'Pyro Damage'}>PyroDamage</option>
-                <option value={'Hydro Damage'}>Hydro Damage</option>
-                <option value={'Cryo Damage'}>Cryo Damage</option>
-                <option value={'Electro Damage'}>Electro Damage</option>
-                <option value={'Anemo Damage'}>Anemo Damage</option>
-            </select>
-        }
-        if (id === 'Circlet') {
-            const idSelect = id + 'Main'
-            return <select className='w-50' id={idSelect} >
-                <option value={'Atk %'}>Atk %</option>
-                <option value={'Def %'}>Def %</option>
-                <option value={'Hp %'}>Hp %</option>
-                <option value={'Crit Rate'}>Crit Rate</option>
-                <option value={'DMG Crit'}>DMG Crit</option>
-                <option value={'Healing Bonus'}>Healing Bonus</option>
-                <option value={'Elemental Mastery'}>Elemental Mastery</option>
-            </select>
+    const { data: name } = useFetch('artifactsNames')
+
+    const [artifact, setArtifact] = useState([])
+    const [nameC, setNameC] = useState('')
+    const [plume, setPlume] = useState(0)
+    const [flower, setFlower] = useState(0)
+    const [sands, setSands] = useState(0)
+    const [goblet, setGoblet] = useState(0)
+    const [circlet, setCirclet] = useState(0)
+
+    const setArtifactInfo = (e) => {
+        e.preventDefault()
+        let artifactPiece = document.getElementById('Artifact').value
+
+        if (artifactPiece === 'flower-of-life' && flower === 0) {
+            addArtifact(artifactPiece)
+            setFlower(1)
         }
 
+        if (artifactPiece === 'plume-of-death' && plume === 0) {
+            addArtifact(artifactPiece)
+            setPlume(1)
+        }
+
+        if (artifactPiece === 'sands-of-eon' && sands === 0) {
+            addArtifact(artifactPiece)
+            setSands(1)
+        }
+
+        if (artifactPiece === 'goblet-of-eonothem' && goblet === 0) {
+            addArtifact(artifactPiece)
+            setGoblet(1)
+        }
+
+        if (artifactPiece === 'circlet-of-logos' && circlet === 0) {
+            addArtifact(artifactPiece)
+            setCirclet(1)
+        }
+
+        if (artifactPiece === 'flower-of-life' && flower === 1) {
+            console.log('You cant add two same type pieces     ' + artifactPiece + flower)
+            return
+        }
+
+        if (artifactPiece === 'plume-of-death' && plume === 1) {
+            console.log('You cant add two same type pieces     ' + artifactPiece + plume)
+            return
+        }
+
+        if (artifactPiece === 'sands-of-eon' && sands === 1) {
+            console.log('You cant add two same type pieces     ' + artifactPiece + sands)
+            return
+        }
+
+        if (artifactPiece === 'goblet-of-eonothem' && goblet === 1) {
+            console.log('You cant add two same type pieces     ' + artifactPiece + goblet)
+            return
+        }
+
+        if (artifactPiece === 'circlet-of-logos' && circlet === 1) {
+            console.log('You cant add two same type pieces     ' + artifactPiece + circlet)
+            return
+        }
 
     }
-    const getSelectSubStat = (id) => {
+    const addArtifact = (artifactPiece) => {
+        setArtifact(newItem => [...newItem, {
+
+            artifactSet: artifactPiece,
+            artifactName: document.getElementById('ArtifactSet').value,
+            ATK: 100,
+            SB1: {
+                stat: document.getElementById('SubStat1Select').value,
+                value: document.getElementById('SubStat1').value
+            },
+            SB2: {
+                stat: document.getElementById('SubStat2Select').value,
+                value: document.getElementById('SubStat2').value
+            },
+            SB3: {
+                stat: document.getElementById('SubStat3Select').value,
+                value: document.getElementById('SubStat3').value
+            },
+            SB4: {
+                stat: document.getElementById('SubStat4Select').value,
+                value: document.getElementById('SubStat4').value
+            },
+
+        }])
+
+    }
+    const setName = (e) => {
+        e.preventDefault()
+        setNameC(document.getElementById('Name').value)
+    }
+
+    const selectSubStat = (idSelect) => {
+
+        return <select className='w-50' form='Prueba' id={idSelect + 'Select'}>
+            <option value='HP'>HP</option>
+            <option value='HP%'>HP%</option>
+            <option value='ATK'>ATK</option>
+            <option value='ATK%'>ATK%</option>
+            <option value='DEF'>DEF</option>
+            <option value='DEF %'>DEF%</option>
+            <option value='Energy Recharge'>Energy Recharge</option>
+            <option value='Elemental Mastery'>Elemental Mastery</option>
+            <option value='Crit Rate'>Crit Rate</option>
+            <option value='DMG Crit'>DMG CRIT</option>
 
 
-        return <select className='w-50' id={id+'SubSelect'} >
-            <option value={'Atk'}>Atk</option>
-            <option value={'Atk %'}>Atk %</option>
-            <option value={'Def'}>Def</option>
-            <option value={'Def %'}>Def %</option>
-            <option value={'Hp'}>Hp</option>
-            <option value={'Hp %'}>Hp %</option>
-            <option value={'Elemental Mastery'}>Elemental Mastery</option>
-            <option value={'Crit Rate'}>Crit. Rate</option>
-            <option value={'DMG Crit'}>DMG Crit.</option>
         </select>
-
     }
 
     return (
-        <div className='text-light'>
-            {AR === 'Plume' ?
 
-                <input type={'text'} placeholder={'Plume ATK'} className='w-100 text-center' id={id} /> :
-                AR === 'Flower' ?
-                    <input type={'text'} placeholder={'Flower HP'} className='w-100 text-center' id={id} /> :
+        <div className='text-light IC__container'>
+            <div className='w-100 mb-2' >
 
-                    <div>
-                        {getSelectMainStat(id)}
-                        <input type={'text'} placeholder={AR} className='w-50 text-center' id={id} />
-                    </div>
+                <input type={'text'} placeholder={'Character name'} id='Name' />
+                <form id='PruebaN'>
+                    <input type={'submit'} onClick={setName} value='Add' />
+                </form>
+            </div>
 
-            }
-            {getSelectSubStat(id)}
-            <input type={'text'} placeholder={'SubStat1'} className='w-50 text-center' id={id+'Sub1'} />
+            <label>Add Artifact</label>
+            <div>
+                <select className='w-50' form='Artifact' id={'Artifact'}>
+                    <option value='flower-of-life'>Flower</option>
+                    <option value='plume-of-death'>Plume</option>
+                    <option value='sands-of-eon'>Sands</option>
+                    <option value='goblet-of-eonothem'>Goblet</option>
+                    <option value='circlet-of-logos'>Circlet</option>
+                </select>
+                <select className='w-50' id={'ArtifactSet'} form='ArtifactSet'>
+                    {!name ? 'no item available' : name.map(obj => {
+                        return <option key={obj.name} value={obj.name}>{obj.name}</option>
+                    })}
+                </select>
+            </div>
 
+            {selectSubStat('SubStat1')} <input type={'text'} placeholder='SubStat 1' id='SubStat1' />
+            {selectSubStat('SubStat2')} <input type={'text'} placeholder='SubStat 2' id='SubStat2' />
+            {selectSubStat('SubStat3')} <input type={'text'} placeholder='SubStat 3' id='SubStat3' />
+            {selectSubStat('SubStat4')} <input type={'text'} placeholder='SubStat 4' id='SubStat4' />
 
+            <form id='PruebaF'>
+                <input type={'submit'} onClick={setArtifactInfo} value='Add' />
+            </form>
+            <CardBuildImg plume={artifact} name={nameC} />
 
         </div>
     )
-}
-
-ArtifactInfo.propTypes = {
-    AR: PropTypes.string,
-    id: PropTypes.string
 }

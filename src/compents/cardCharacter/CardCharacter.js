@@ -38,7 +38,7 @@ export const CardCharacter = () => {
                     return <Card style={{ width: '12rem' }} key={obj.name + obj.vision} className='card-character'>
                         {<Card.Img
                             variant="top"
-                            src={!names ? 'no images' : `https://api.genshin.dev/characters/${names[i].name}/icon`} />}
+                            src={!names ? 'no images' : names[i].name === 'yae-miko' ? `https://api.genshin.dev/characters/${names[i].name}/icon-big` : `https://api.genshin.dev/characters/${names[i].name}/icon`} />}
                         <Card.Body>
                             <Card.Title className='c-text d-flex justify-content-center'>{obj.name}</Card.Title>
                             <div className='card-text c-text'>
@@ -52,7 +52,7 @@ export const CardCharacter = () => {
                                 <div className='d-flex justify-content-center'>{obj.rarity === 4 ? <ReactStars {...fourStars} /> : <ReactStars {...fiveStars} />}</div>
                             </div>
                             <Button variant="outline-primary" onClick={() => { handleShow(obj, names[i].name) }} className='w-100'>
-                View
+                                View
                             </Button>
                         </Card.Body>
                     </Card>

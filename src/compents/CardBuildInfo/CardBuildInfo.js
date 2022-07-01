@@ -10,7 +10,7 @@ export const CardBuildInfo = () => {
             <div className='IC__container'>
                 <div className='IC__box'>
                     
-                    <div className='w-50 d-flex flex-wrap justify-content-evenly'>
+                    <div className='w-100'>
                         <ArtifactInfo />
 
 

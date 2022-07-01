@@ -17,7 +17,7 @@ export const ModalCharacter = ({ character, name, show, onHide }) => {
 
                     <div className='container-info-character'>
                         <img
-                            src={`https://api.genshin.dev/characters/${name}/portrait`}
+                            src={name === 'yae-miko' ? `https://api.genshin.dev/characters/${name}/gacha-splash` : `https://api.genshin.dev/characters/${name}/portrait`}
                             width='500px'
                             height='500px'
                             className='img-modal'

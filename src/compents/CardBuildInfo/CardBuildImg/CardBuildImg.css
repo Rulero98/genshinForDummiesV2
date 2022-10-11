@@ -1,0 +1,42 @@
+.CB__container {
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 100% !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.CB__container .CB__imgHolder {
+    width: 100%;
+}
+
+.CB__container .CB__imgHolder .CB__box {
+    background-size: cover;
+    height: 720px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 1080px;
+}
+
+.CB__container .CB__imgHolder .CB__box .CB__ArtifactContainer {
+    background-color: rgba(0, 0, 0, 0.15);
+    border: 1px solid #000;
+    border-radius: 5px;
+    height: 25%;
+    width: 50%;
+    margin-top: 15px;
+
+}
+
+.CB__container .CB__imgHolder .CB__box .CB__ArtifactContainer .CB__imgArtifact {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
+.CB__container .CB__imgHolder .CB__box .CB__ArtifactContainer .CB__pInfo {
+    margin-bottom: 0.5rem;
+}

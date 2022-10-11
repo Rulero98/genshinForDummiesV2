@@ -1,0 +1,13 @@
+
+.IC__container{
+    
+    justify-content: center;
+    margin-top: 5rem;
+    width: 1500px;
+}
+
+.IC__container .IC__box{
+    background-color: green;
+    margin: 0 auto;
+    width: 50%;
+}

@@ -21,6 +21,7 @@
     flex-wrap: wrap;
     margin: 0 auto;
     width: 75%;
+    justify-content: center;
 }
 
 .dropdown__container .dropdown__card {

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Form, Table } from 'react-bootstrap'
 import { useFetch } from '../../hooks/useFetch'
+import { getStars } from '../../helpers/getStars'
+
+
 
 import './TableWeapons.css'
 export const TableWeapons = () => {
@@ -23,7 +26,6 @@ export const TableWeapons = () => {
             })
         }
     }, [names])
-
 
     useEffect(() => {
         if (weapons && names) {
@@ -53,6 +55,8 @@ export const TableWeapons = () => {
         }
     }, [sortType, ascDesc])
 
+    const setStars = (stars) => stars = getStars(parseInt(stars),parseInt(stars))
+    
 
     const handleSearch = (e) => {
         if (weapons?.length) {
@@ -85,7 +89,7 @@ export const TableWeapons = () => {
                     className= 'search-weapon'
                 />
             </Form>
-            <Table className='table-weapon text-light container'>
+            <Table className='table-weapon text-light '>
                 <thead>
                     <tr className="table-row">
                         <th
@@ -120,13 +124,13 @@ export const TableWeapons = () => {
                     {!result ? 'no weapons yet' : result?.map((obj,i) => {
                         return <tr className='text-light table-row-b text-center' key={obj.name+i}>
                             <td>
-                                {/*<div className="altura">
+                                {<div className="altura">
                                     <div className="w-50 img-weapon"><img src={`https://api.genshin.dev/weapons/${obj.imgname.name}/icon.png`} height='100px' width='100px' /></div>
                                     <div className=" w-50 text-start">{obj.name}</div>
-                                </div>*/}
+                                </div>}
                             </td>
                             <td>{obj.type}</td>
-                            <td>{obj.rarity}</td>
+                            <td>{setStars(obj.rarity) } </td>
                             <td >
                                 <p>Base attack: {obj.baseAttack}</p>
                                 <p>SubStat: {obj.subStat}</p>

@@ -7,6 +7,10 @@ import './ModalCharacter.css'
 
 export const ModalCharacter = ({ character, name, show, onHide }) => {
 
+    const setImageModal = (nameCharacter) => {
+        return `https://api.genshin.dev/characters/${nameCharacter}/card`
+    }
+
     return (
         <>
             <Modal show={show} onHide={onHide} className={`${character.vision}`}>
@@ -17,13 +21,15 @@ export const ModalCharacter = ({ character, name, show, onHide }) => {
 
                     <div className='container-info-character'>
                         <img
-                            src={`https://api.genshin.dev/characters/${name}/portrait`}
+                            src={setImageModal(name)}
                             width='500px'
                             height='500px'
                             className='img-modal'
                         />
+
                         <div className='options-modal text-light text-left'>
                             <Tabs defaultActiveKey="Character information" id="Tab-c-w-a" variant='pills' >
+
                                 <Tab eventKey="Character information" title="Character information">
                                     <div >
                                         <p>Vision: {character.vision}</p>
@@ -34,8 +40,8 @@ export const ModalCharacter = ({ character, name, show, onHide }) => {
                                         <p>Constellation: {character.constellation}</p>
                                         <p>Description: {character.description}</p>
                                     </div>
-
                                 </Tab>
+
                                 <Tab eventKey="SkillTalents" title="SkillTalents">
                                     <div className='Talents-Info'>
                                         {!character.skillTalents ? 'No skillTalents available' : character.skillTalents.map(obj => {
@@ -48,6 +54,7 @@ export const ModalCharacter = ({ character, name, show, onHide }) => {
                                         })}
                                     </div>
                                 </Tab>
+
                                 <Tab eventKey="PassiveTalents" title="PassiveTalents">
                                     <div className='Talents-Info'>
                                         {!character.passiveTalents ? 'No passiveTalents available' : character.passiveTalents.map(obj => {
@@ -55,14 +62,12 @@ export const ModalCharacter = ({ character, name, show, onHide }) => {
                                                 <div key={obj.name}>
                                                     <p><b><i>{obj.name} - {obj.unlock}</i></b></p>
                                                     <p>{obj.description}</p>
-                                                    <p>
-                                                        { }
-                                                    </p>
                                                 </div>
                                             )
                                         })}
                                     </div>
                                 </Tab>
+
                                 <Tab eventKey="Constellations" title="Constellations">
                                     <div className='Talents-Info'>
                                         {!character.constellations ? 'No constellations available' : character.constellations.map(obj => {
@@ -75,22 +80,22 @@ export const ModalCharacter = ({ character, name, show, onHide }) => {
                                         })}
                                     </div>
                                 </Tab>
-                            </Tabs>
-                        </div>
 
-                        {/* <div className='d-info-modal'>
-                            HOLAAAAAAAAA
-                        </div> */}
+                            </Tabs>
+
+                        </div>
 
                     </div>
 
                 </Modal.Body>
+
                 <Modal.Footer>
                     <Button className='btn-accept' onClick={onHide}>
                         Accept
                     </Button>
 
                 </Modal.Footer>
+
             </Modal>
         </>
     )

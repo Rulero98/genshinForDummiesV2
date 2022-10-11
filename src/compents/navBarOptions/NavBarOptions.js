@@ -9,15 +9,16 @@ import './NavBarOptions.css'
 
 const NavBarOptions = () => {
 
-    const backToTop = () =>{
+    const backToTop = () => {
         document.body.scrollTop = 0
         document.documentElement.scrollTop = 0
     }
 
 
+
     return (
         <div className='container-fluid c-nav' >
-            <Tabs defaultActiveKey="Artifacts" id="Tab-c-w-a" onClick={backToTop}>
+            <Tabs defaultActiveKey="Characters" id="Tab-c-w-a" onClick={backToTop}>
                 <Tab eventKey="Characters" title="Characters">
                     <CardCharacter />
                 </Tab>
@@ -27,8 +28,9 @@ const NavBarOptions = () => {
                 <Tab eventKey="Artifacts" title="Artifacts">
                     <TableArtifacts />
                 </Tab>
+
             </Tabs>
-        </div>
+        </div >
     )
 }
 

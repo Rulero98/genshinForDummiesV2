@@ -31,6 +31,10 @@
     --electro-second: #7c32d1;
     --electro-third: #6000ce;
 
+    --dendro-first: #bae654;
+    --dendro-second: #a5e413;
+    --dendro-third: #6b8d1c;
+
 
 
 }
@@ -69,6 +73,12 @@
     --main-first-color: var(--electro-first);
     --main-second-color: var(--electro-second);
     --main-third-color: var(--electro-third);
+}
+
+.Dendro{
+    --main-first-color: var(--dendro-first);
+    --main-second-color: var(--dendro-second);
+    --main-third-color: var(--dendro-third);
 }
 
 body{
